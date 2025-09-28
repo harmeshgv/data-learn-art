@@ -9,7 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,8 +25,7 @@ jobs:
       - name: Build
         run: |
           npm run build
-          cp dist/index.html dist/404.html
-
+          cp dist/index.html dist/404.html   # creates fallback for GitHub Pages SPA
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -40,6 +38,8 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages   # <--- must match the environment you created in GitHub
     permissions:
       pages: write
       id-token: write
