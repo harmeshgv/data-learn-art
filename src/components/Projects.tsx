@@ -97,9 +97,8 @@ const Projects = () => {
         
         <div className="text-center mt-12">
           <Button variant="outline" size="lg" asChild>
-            <a href="https://github.com/harmeshgv" target="_blank" rel="noopener noreferrer">
-              <Github className="mr-2 h-4 w-4" />
-              View All Projects on GitHub
+            <a href="/projects">
+              View All Projects
             </a>
           </Button>
         </div>
